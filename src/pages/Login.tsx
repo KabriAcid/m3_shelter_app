@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { FormInput } from "../components/FormInput";
 import { Button } from "../components/Button";
@@ -10,6 +10,7 @@ import { validateEmail } from "../utils/validation";
 export const Login: React.FC = () => {
   const [showPassword, setShowPassword] = React.useState(false);
   const [rememberMe, setRememberMe] = React.useState(false);
+  const navigate = useNavigate();
 
   const {
     fields,
@@ -55,7 +56,7 @@ export const Login: React.FC = () => {
       });
 
       // Redirect to dashboard
-      alert("Login successful! Redirecting to dashboard...");
+      navigate("/dashboard");
     } catch (error) {
       console.error("Login failed:", error);
     } finally {

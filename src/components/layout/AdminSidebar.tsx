@@ -42,7 +42,7 @@ export function AdminSidebar() {
             <Home className="w-4 h-4 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-bold">M3 Shelter</h1>
+            <h1 className="text-xl font-bold">M3 Admin</h1>
             <p className="text-xs text-blue-200">Admin Panel</p>
           </div>
         </div>

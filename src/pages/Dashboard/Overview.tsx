@@ -81,8 +81,7 @@ export const Overview: React.FC = () => {
                 <Home className="h-8 w-8" />
                 <span className="text-sm opacity-90">Welcome Back</span>
               </div>
-              <h1 className="text-2xl md:text-3xl font-bold mb-2">Hello, Welcome Back 👋</h1>
-              <p className="opacity-90">Login to your account below</p>
+              <h1 className="text-2xl md:text-3xl font-bold mb-2">Hello, Welcome Back </h1>
             </div>
           </div>
         </motion.div>

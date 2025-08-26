@@ -5,7 +5,7 @@ const Topbar: React.FC = () => {
     <header className="w-full h-16 bg-gradient-to-r from-[#053DA6] to-[#042f85] flex items-center px-6 shadow-lg">
       <div className="flex-1 flex items-center">
         <span className="text-white text-2xl font-bold tracking-wide">
-          M3 Shelter Admin
+          M3 Admin
         </span>
       </div>
       <div className="flex items-center space-x-4">

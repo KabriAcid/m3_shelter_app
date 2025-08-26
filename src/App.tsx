@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import BottomNav from "./components/ui/BottomNav";
 
 // Public pages
 import Homepage from "./pages/Homepage";
@@ -63,11 +64,14 @@ function AdminLayout() {
 function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith("/admin");
+  const isDashboard = location.pathname.startsWith("/dashboard");
+  const showNavFooter = !isAdmin && !isDashboard;
   return (
-    <div className="min-h-screen bg-white">
-      {!isAdmin && <Navigation />}
+    <div className="min-h-screen bg-white relative">
+      {showNavFooter && <Navigation />}
       <main>{children}</main>
-      {!isAdmin && <Footer />}
+      {isDashboard && <BottomNav />}
+      {showNavFooter && <Footer />}
     </div>
   );
 }

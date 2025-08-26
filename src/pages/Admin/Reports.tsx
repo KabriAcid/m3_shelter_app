@@ -49,7 +49,7 @@ export function Reports() {
   };
 
   const barChartData = {
-    labels: ['Lagos', 'Abuja', 'Port Harcourt', 'Kano', 'Ibadan', 'Kaduna'],
+    labels: ['Lagos', 'Abuja', 'Port Harcourt', 'Kano', 'Ibadan', 'Zamfara'],
     datasets: [
       {
         label: 'Active Investments',
