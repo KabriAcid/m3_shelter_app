@@ -9,7 +9,7 @@ export function Settings() {
 
   const tabs = [
     { id: 'general', label: 'General', icon: Globe },
-    { id: 'users', label: 'User Management', icon: Users },
+    { id: 'users', label: 'Admins', icon: Users },
     { id: 'security', label: 'Security', icon: Shield },
     { id: 'notifications', label: 'Notifications', icon: Bell },
     { id: 'integrations', label: 'Integrations', icon: Database },
@@ -166,7 +166,7 @@ export function Settings() {
                       <h4 className="font-medium text-[#261C15] mb-2">Super Admin</h4>
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Full system access</li>
-                        <li>• User management</li>
+                        <li>• Admins</li>
                         <li>• Settings configuration</li>
                         <li>• Financial oversight</li>
                       </ul>

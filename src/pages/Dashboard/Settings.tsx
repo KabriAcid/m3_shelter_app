@@ -291,9 +291,6 @@ export const Settings: React.FC = () => {
                       <Save className="h-4 w-4" />
                       Save Changes
                     </Button>
-                    <Button variant="outline" type="button">
-                      Cancel
-                    </Button>
                   </div>
                 </form>
               </Card>
