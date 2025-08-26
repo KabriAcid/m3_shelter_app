@@ -17,13 +17,13 @@ const Navigation = () => {
   }, []);
 
   const navigation = [
-  { name: "Home", href: "/" },
-  { name: "How It Works", href: "/how-it-works" },
-  { name: "Features", href: "/features" },
-  { name: "Investments", href: "/investments" },
-  { name: "About", href: "/about" },
-  { name: "Blog", href: "/blog" },
-  { name: "Login", href: "/login", isButton: true },
+    { name: "Home", href: "/" },
+    { name: "How It Works", href: "/how-it-works" },
+    { name: "Features", href: "/features" },
+    { name: "Investments", href: "/investments" },
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Login", href: "/login", isButton: true },
   ];
 
   return (
