@@ -38,14 +38,12 @@ import { Reports } from "./pages/Admin/Reports";
 import { Settings as AdminSettings } from "./pages/Admin/Settings";
 
 function AdminLayout() {
-  // Use nested routing for admin dashboard
-  const [activeTab, setActiveTab] = React.useState("dashboard");
   return (
     <div className="flex flex-col min-h-screen bg-[#F7F7F2]">
       {/* Premium Topbar */}
       <Topbar />
       <div className="flex flex-1">
-        <AdminSidebar activeTab={activeTab} onTabChange={setActiveTab} />
+        <AdminSidebar />
         <main className="flex-1 p-6 overflow-auto">
           <Routes>
             <Route path="/" element={<AdminDashboard />} />
