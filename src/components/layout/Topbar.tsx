@@ -17,9 +17,9 @@ const Topbar: React.FC = () => {
       <div className="flex-1 flex items-center">
         <span className="text-white text-2xl font-bold tracking-wide flex items-center gap-2">
           <img
-            src="/src/assets/favicon.jpg"
+            src="/src/assets/favicon.png"
             alt="M3 Admin"
-            className="w-10 h-10 rounded-lg shadow"
+            className="w-12 h-12 rounded-lg"
           />
         </span>
       </div>
