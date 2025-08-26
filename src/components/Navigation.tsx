@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Download, Building } from "lucide-react";
+import { Menu, X, Building } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navigation = () => {
@@ -23,6 +23,7 @@ const Navigation = () => {
     { name: "Investments", href: "/investments" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
+    { name: "Admin", href: "/admin/login", isButton: true },
     { name: "Login", href: "/login", isButton: true },
   ];
 

@@ -30,6 +30,7 @@ import { Settings as UserSettings } from "./pages/Dashboard/Settings";
 // Admin pages
 import { AdminSidebar } from "./components/layout/AdminSidebar";
 import Topbar from "./components/layout/Topbar";
+import { Login as AdminLogin } from "./pages/Admin/AdminLogin";
 import { AdminDashboard } from "./pages/Admin/AdminDashboard";
 import { Users } from "./pages/Admin/Users";
 import { Investments as AdminInvestments } from "./pages/Admin/Investments";
@@ -87,7 +88,6 @@ function AppRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/download" element={<Download />} />
       <Route path="/blog" element={<Blog />} />
-
       {/* User routes */}
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
@@ -97,13 +97,14 @@ function AppRoutes() {
       <Route path="/dashboard/legal-vault" element={<LegalVault />} />
       <Route path="/dashboard/notifications" element={<Notifications />} />
       <Route path="/dashboard/settings" element={<UserSettings />} />
-
       {/* Admin routes */}
-      <Route path="/admin/*" element={<AdminLayout />} />
+      <Route path="/admin/login" element={<AdminLogin />} />{" "}
+      {/* Standalone admin login */}
+      <Route path="/admin/*" element={<AdminLayout />} />{" "}
+      {/* All other admin pages */}
     </Routes>
   );
 }
-
 function App() {
   return (
     <Router>

@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
-import { FormInput } from "../components/FormInput";
-import { Button } from "../components/Button";
-import { useFormValidation } from "../hooks/useFormValidation";
-import { validateEmail } from "../utils/validation";
+import { FormInput } from "../../components/FormInput";
+import { Button } from "../../components/Button";
+import { useFormValidation } from "../../hooks/useFormValidation";
+import { validateEmail } from "../../utils/validation";
 
 export const Login: React.FC = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -56,7 +56,7 @@ export const Login: React.FC = () => {
       });
 
       // Redirect to dashboard
-      navigate("/dashboard");
+      navigate("/admin");
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
@@ -66,7 +66,7 @@ export const Login: React.FC = () => {
 
   // Secondary color theme: #FB7F00 (orange)
   return (
-    <div className="min-h-screen bg-[#FFF7ED] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FFF7ED] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 mt-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -173,7 +173,16 @@ export const Login: React.FC = () => {
             Sign In
           </Button>
 
-          {/* No register link for admin login */}
+          <div className="text-center">
+            <span className="text-sm text-gray-600">
+              <Link
+                to="/"
+                className="font-medium text-[#053DA6] hover:underline"
+              >
+                Back to Homepage
+              </Link>
+            </span>
+          </div>
         </motion.form>
       </motion.div>
     </div>
