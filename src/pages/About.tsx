@@ -1,4 +1,8 @@
 import React from "react";
+import ceoImg from "../assets/img/ceo-m3-innovative.jpg";
+import deputyManagerImg from "../assets/img/deputy-manager-marketing.jpg";
+import financeDirectorImg from "../assets/img/director-of-finance.jpg";
+import marketingDirectorImg from "../assets/img/marketing-director.jpg";
 import { motion } from "framer-motion";
 import {
   Target,
@@ -22,35 +26,31 @@ const About = () => {
       name: "Marafa Muhammad Mustapha",
       position: "Founder & CEO",
       bio: "Experienced fintech entrepreneur with over 10 years in financial services and real estate.",
-      image:
-        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+      image: ceoImg,
       linkedin: "#",
       twitter: "#",
     },
     {
-      name: "Kemi Adebayo",
-      position: "CTO",
-      bio: "Former blockchain engineer at major fintech companies, specializing in secure financial systems.",
-      image:
-        "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg",
+      name: "Ahmad Jikamshi",
+      position: "Deputy Manager, Marketing",
+      bio: "Marketing strategist with a strong background in digital campaigns and brand growth.",
+      image: deputyManagerImg,
       linkedin: "#",
       twitter: "#",
     },
     {
-      name: "David Okafor",
-      position: "Head of Real Estate",
-      bio: "Real estate veteran with 15+ years experience in Nigerian property development and investment.",
-      image:
-        "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg",
+      name: "Aliyu Umar",
+      position: "Director of Finance & Contracts",
+      bio: "Finance expert with 8+ years in property development and investment management.",
+      image: financeDirectorImg,
       linkedin: "#",
       twitter: "#",
     },
     {
-      name: "Aisha Garba",
-      position: "Head of Legal & Compliance",
-      bio: "Securities lawyer specializing in investment regulations and blockchain compliance.",
-      image:
-        "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg",
+      name: "Muhammad Nasir Salihu",
+      position: "Marketing Director",
+      bio: "Specialist in real estate marketing and investor relations.",
+      image: marketingDirectorImg,
       linkedin: "#",
       twitter: "#",
     },
