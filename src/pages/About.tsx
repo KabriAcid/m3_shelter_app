@@ -93,7 +93,7 @@ const About = () => {
       year: "2021",
       title: "Company Founded",
       description:
-        "M3 Shelter was established with a vision to democratize real estate investment in Nigeria.",
+        "M3 Concepts was established with a vision to democratize real estate investment in Nigeria.",
     },
     {
       year: "2022",
@@ -139,7 +139,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="text-center space-y-6"
           >
-            <h1 className="text-5xl font-bold">About M3 Shelter</h1>
+            <h1 className="text-5xl font-bold">About M3 Concepts</h1>
             <p className="text-xl text-primary-100 max-w-3xl mx-auto">
               We're on a mission to democratize real estate investment in
               Nigeria, making property ownership accessible to every Nigerian
@@ -291,7 +291,7 @@ const About = () => {
               Our Core Values
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide everything we do at M3 Shelter
+              The principles that guide everything we do at M3 Concepts
             </p>
           </motion.div>
 
@@ -382,7 +382,7 @@ const About = () => {
           >
             <h2 className="text-4xl font-bold text-gray-900">Meet Our Team</h2>
             <p className="text-xl text-gray-600">
-              The experts behind M3 Shelter's success
+              The experts behind M3 Concepts's success
             </p>
           </motion.div>
 
@@ -447,7 +447,7 @@ const About = () => {
             >
               <h2 className="text-4xl font-bold">Get in Touch</h2>
               <p className="text-xl text-primary-100">
-                Have questions about investing with M3 Shelter? We'd love to
+                Have questions about investing with M3 Concepts? We'd love to
                 hear from you.
               </p>
               <div className="space-y-4">

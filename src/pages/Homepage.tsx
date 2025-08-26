@@ -1,69 +1,73 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
-  Shield, 
-  TrendingUp, 
-  Users, 
-  Building2, 
-  Lock, 
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Shield,
+  TrendingUp,
+  Users,
+  Building2,
+  Lock,
   Smartphone,
   CheckCircle,
   Star,
-  Play
-} from 'lucide-react';
+  Play,
+} from "lucide-react";
 
 const Homepage = () => {
   const stats = [
-    { label: 'Properties Listed', value: '₦2.5B+', icon: Building2 },
-    { label: 'Active Investors', value: '5,000+', icon: Users },
-    { label: 'Average Returns', value: '18%', icon: TrendingUp },
-    { label: 'Years Experience', value: '3+', icon: Star },
+    { label: "Properties Listed", value: "₦2.5B+", icon: Building2 },
+    { label: "Active Investors", value: "5,000+", icon: Users },
+    { label: "Average Returns", value: "18%", icon: TrendingUp },
+    { label: "Years Experience", value: "3+", icon: Star },
   ];
 
   const features = [
     {
       icon: Users,
-      title: 'Co-Own Model',
-      description: 'Invest in income-generating properties with fractional ownership starting from ₦50,000.'
+      title: "Co-Own Model",
+      description:
+        "Invest in income-generating properties with fractional ownership starting from ₦50,000.",
     },
     {
       icon: Building2,
-      title: 'Co-Build Model',
-      description: 'Pool funds with other investors to construct new properties and share the profits.'
+      title: "Co-Build Model",
+      description:
+        "Pool funds with other investors to construct new properties and share the profits.",
     },
     {
       icon: Shield,
-      title: 'Blockchain Security',
-      description: 'All transactions and ownership records are secured on the blockchain for transparency.'
+      title: "Blockchain Security",
+      description:
+        "All transactions and ownership records are secured on the blockchain for transparency.",
     },
     {
       icon: Lock,
-      title: 'Legal Vault',
-      description: 'Access all property documents and legal papers securely through our digital vault.'
-    }
+      title: "Legal Vault",
+      description:
+        "Access all property documents and legal papers securely through our digital vault.",
+    },
   ];
 
   const testimonials = [
     {
-      name: 'Adebayo Ogundimu',
-      location: 'Lagos, Nigeria',
-      text: 'I never thought I could own property in Lagos with just ₦100,000. M3 Shelter made my dream a reality.',
-      rating: 5
+      name: "Adebayo Ogundimu",
+      location: "Lagos, Nigeria",
+      text: "I never thought I could own property in Lagos with just ₦100,000. M3 Concepts made my dream a reality.",
+      rating: 5,
     },
     {
-      name: 'Fatima Abdullahi',
-      location: 'Abuja, Nigeria', 
-      text: 'The returns have been incredible. 20% in my first year, and I can track everything on my phone.',
-      rating: 5
+      name: "Fatima Abdullahi",
+      location: "Abuja, Nigeria",
+      text: "The returns have been incredible. 20% in my first year, and I can track everything on my phone.",
+      rating: 5,
     },
     {
-      name: 'Chinedu Okwu',
-      location: 'Port Harcourt, Nigeria',
-      text: 'The transparency and security features give me confidence in my investments. Highly recommended!',
-      rating: 5
-    }
+      name: "Chinedu Okwu",
+      location: "Port Harcourt, Nigeria",
+      text: "The transparency and security features give me confidence in my investments. Highly recommended!",
+      rating: 5,
+    },
   ];
 
   return (
@@ -81,11 +85,14 @@ const Homepage = () => {
             >
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 Own Real Estate in Nigeria
-                <span className="block text-secondary-500">Starting from ₦50,000</span>
+                <span className="block text-secondary-500">
+                  Starting from ₦50,000
+                </span>
               </h1>
               <p className="text-xl text-gray-100 leading-relaxed">
-                Join thousands of Nigerians building wealth through fractional real estate ownership. 
-                Invest, earn passive income, and help solve Nigeria's housing deficit.
+                Join thousands of Nigerians building wealth through fractional
+                real estate ownership. Invest, earn passive income, and help
+                solve Nigeria's housing deficit.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -104,7 +111,7 @@ const Homepage = () => {
                 </Link>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -117,9 +124,13 @@ const Homepage = () => {
                     <Building2 className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold">Start Investing Today</h3>
-                  <p className="text-gray-200">Join over 5,000+ investors already earning passive income</p>
+                  <p className="text-gray-200">
+                    Join over 5,000+ investors already earning passive income
+                  </p>
                   <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4">
-                    <div className="text-3xl font-bold text-green-400">18% Average Returns</div>
+                    <div className="text-3xl font-bold text-green-400">
+                      18% Average Returns
+                    </div>
                     <div className="text-green-200">Annual rental yield</div>
                   </div>
                 </div>
@@ -144,7 +155,9 @@ const Homepage = () => {
                 <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto">
                   <stat.icon className="w-6 h-6 text-primary-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
+                <div className="text-3xl font-bold text-gray-900">
+                  {stat.value}
+                </div>
                 <div className="text-gray-600">{stat.label}</div>
               </motion.div>
             ))}
@@ -161,9 +174,12 @@ const Homepage = () => {
             transition={{ duration: 0.6 }}
             className="text-center space-y-4 mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900">How M3 Shelter Works</h2>
+            <h2 className="text-4xl font-bold text-gray-900">
+              How M3 Concepts Works
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Two innovative investment models designed to democratize real estate ownership in Nigeria
+              Two innovative investment models designed to democratize real
+              estate ownership in Nigeria
             </p>
           </motion.div>
 
@@ -179,8 +195,12 @@ const Homepage = () => {
                 <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                   <feature.icon className="w-6 h-6 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -196,27 +216,34 @@ const Homepage = () => {
             transition={{ duration: 0.6 }}
             className="text-center space-y-4 mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900">Start Investing in 3 Simple Steps</h2>
-            <p className="text-xl text-gray-600">Get started with real estate investment in minutes</p>
+            <h2 className="text-4xl font-bold text-gray-900">
+              Start Investing in 3 Simple Steps
+            </h2>
+            <p className="text-xl text-gray-600">
+              Get started with real estate investment in minutes
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                step: '01',
-                title: 'Download & Sign Up',
-                description: 'Download the M3 Shelter app and create your account with bank verification.'
+                step: "01",
+                title: "Download & Sign Up",
+                description:
+                  "Download the M3 Concepts app and create your account with bank verification.",
               },
               {
-                step: '02', 
-                title: 'Browse Properties',
-                description: 'Explore available properties, review returns, and choose your investment amount.'
+                step: "02",
+                title: "Browse Properties",
+                description:
+                  "Explore available properties, review returns, and choose your investment amount.",
               },
               {
-                step: '03',
-                title: 'Invest & Earn',
-                description: 'Make your investment and start earning passive income from rental returns.'
-              }
+                step: "03",
+                title: "Invest & Earn",
+                description:
+                  "Make your investment and start earning passive income from rental returns.",
+              },
             ].map((step, index) => (
               <motion.div
                 key={step.step}
@@ -228,8 +255,12 @@ const Homepage = () => {
                 <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
                   {step.step}
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                <h3 className="text-2xl font-semibold text-gray-900">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -245,8 +276,12 @@ const Homepage = () => {
             transition={{ duration: 0.6 }}
             className="text-center space-y-4 mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900">What Our Investors Say</h2>
-            <p className="text-xl text-gray-600">Join thousands of satisfied investors across Nigeria</p>
+            <h2 className="text-4xl font-bold text-gray-900">
+              What Our Investors Say
+            </h2>
+            <p className="text-xl text-gray-600">
+              Join thousands of satisfied investors across Nigeria
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -260,13 +295,22 @@ const Homepage = () => {
               >
                 <div className="flex space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                 </div>
-                <p className="text-gray-600 leading-relaxed mb-4">"{testimonial.text}"</p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  "{testimonial.text}"
+                </p>
                 <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-gray-500 text-sm">{testimonial.location}</div>
+                  <div className="font-semibold text-gray-900">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-gray-500 text-sm">
+                    {testimonial.location}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -286,14 +330,15 @@ const Homepage = () => {
             >
               <h2 className="text-4xl font-bold">Your Investment is Secure</h2>
               <p className="text-xl text-primary-100">
-                We use cutting-edge blockchain technology and are regulated by the Securities and Exchange Commission, Nigeria.
+                We use cutting-edge blockchain technology and are regulated by
+                the Securities and Exchange Commission, Nigeria.
               </p>
               <div className="space-y-4">
                 {[
-                  'Blockchain-secured transactions',
-                  'SEC Nigeria regulated platform',
-                  'Bank-level security encryption',
-                  'Full legal documentation access'
+                  "Blockchain-secured transactions",
+                  "SEC Nigeria regulated platform",
+                  "Bank-level security encryption",
+                  "Full legal documentation access",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
@@ -302,7 +347,7 @@ const Homepage = () => {
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -313,8 +358,9 @@ const Homepage = () => {
                 <Shield className="w-16 h-16 text-secondary-500 mx-auto" />
                 <h3 className="text-2xl font-bold">SEC Regulated</h3>
                 <p className="text-primary-100">
-                  M3 Shelter operates under the regulatory oversight of the Securities and Exchange Commission, 
-                  Nigeria, ensuring compliance with all investment regulations.
+                  M3 Concepts operates under the regulatory oversight of the
+                  Securities and Exchange Commission, Nigeria, ensuring
+                  compliance with all investment regulations.
                 </p>
               </div>
             </motion.div>
@@ -335,7 +381,8 @@ const Homepage = () => {
               Ready to Start Building Wealth?
             </h2>
             <p className="text-xl text-orange-100">
-              Join thousands of Nigerians already earning passive income through real estate investment.
+              Join thousands of Nigerians already earning passive income through
+              real estate investment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -88,7 +88,7 @@ export const Register: React.FC = () => {
             Create your account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Join M3 Shelter and start your real estate investment journey
+            Join M3 Concepts and start your real estate investment journey
           </p>
         </div>
 

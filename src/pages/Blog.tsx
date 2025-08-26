@@ -60,7 +60,7 @@ const Blog = () => {
       id: 3,
       title: "How Sarah Made ₦500K in 6 Months Through Fractional Real Estate",
       excerpt:
-        "Meet Sarah Okonkwo, a Lagos-based teacher who transformed her savings into a growing real estate portfolio using M3 Shelter's fractional ownership model.",
+        "Meet Sarah Okonkwo, a Lagos-based teacher who transformed her savings into a growing real estate portfolio using M3 Concepts's fractional ownership model.",
       image:
         "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
       author: "Marafa Muhammad Mustapha",
@@ -84,12 +84,12 @@ const Blog = () => {
     },
     {
       id: 5,
-      title: "M3 Shelter Reaches 5,000 Active Investors Milestone",
+      title: "M3 Concepts Reaches 5,000 Active Investors Milestone",
       excerpt:
-        "We're excited to announce that M3 Shelter has reached a major milestone with over 5,000 active investors and ₦2.5 billion in managed properties.",
+        "We're excited to announce that M3 Concepts has reached a major milestone with over 5,000 active investors and ₦2.5 billion in managed properties.",
       image:
         "https://images.pexels.com/photos/2098624/pexels-photo-2098624.jpeg",
-      author: "M3 Shelter Team",
+      author: "M3 Concepts Team",
       date: "2025-01-03",
       readTime: "4 min read",
       category: "Company News",
@@ -161,7 +161,7 @@ const Blog = () => {
             transition={{ duration: 0.8 }}
             className="text-center space-y-6"
           >
-            <h1 className="text-5xl font-bold">M3 Shelter Blog</h1>
+            <h1 className="text-5xl font-bold">M3 Concepts Blog</h1>
             <p className="text-xl text-primary-100 max-w-3xl mx-auto">
               Stay informed with the latest insights, tips, and news about real
               estate investment in Nigeria. Learn from experts and discover

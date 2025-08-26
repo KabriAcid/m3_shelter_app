@@ -172,7 +172,7 @@ export function AdminDashboard() {
         <div>
           <h1 className="text-2xl font-bold text-[#261C15]">Admin Dashboard</h1>
           <p className="text-gray-600">
-            Welcome back! Here's what's happening with M3 Shelter.
+            Welcome back! Here's what's happening with M3 Concepts.
           </p>
         </div>
       </div>

@@ -1,6 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Building, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Building,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -13,22 +22,35 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg flex items-center justify-center">
                 <Building className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold">M3 Shelter</span>
+              <span className="text-xl font-bold">M3 Concepts</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Democratizing real estate investment in Nigeria through fractional ownership and blockchain technology.
+              Democratizing real estate investment in Nigeria through fractional
+              ownership and blockchain technology.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -39,11 +61,11 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {[
-                { name: 'How It Works', href: '/how-it-works' },
-                { name: 'Features', href: '/features' },
-                { name: 'Investments', href: '/investments' },
-                { name: 'About Us', href: '/about' },
-                { name: 'Download App', href: '/download' },
+                { name: "How It Works", href: "/how-it-works" },
+                { name: "Features", href: "/features" },
+                { name: "Investments", href: "/investments" },
+                { name: "About Us", href: "/about" },
+                { name: "Download App", href: "/download" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -62,11 +84,11 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               {[
-                'Privacy Policy',
-                'Terms of Service',
-                'Investment Disclaimer',
-                'Security Policy',
-                'Cookie Policy',
+                "Privacy Policy",
+                "Terms of Service",
+                "Investment Disclaimer",
+                "Security Policy",
+                "Cookie Policy",
               ].map((item) => (
                 <li key={item}>
                   <a
@@ -86,7 +108,9 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-gray-400" />
-                <span className="text-gray-400 text-sm">hello@m3shelter.com</span>
+                <span className="text-gray-400 text-sm">
+                  hello@m3shelter.com
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-gray-400" />
@@ -102,7 +126,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 M3 Shelter. All rights reserved.
+            © 2025 M3 Concepts. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-2 md:mt-0">
             Regulated by the Securities and Exchange Commission, Nigeria

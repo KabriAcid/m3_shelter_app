@@ -44,7 +44,7 @@ const Navigation = () => {
             <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg flex items-center justify-center">
               <Building className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">M3 Shelter</span>
+            <span className="text-xl font-bold text-gray-900">M3 Concepts</span>
           </Link>
 
           {/* Desktop Navigation */}

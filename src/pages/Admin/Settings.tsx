@@ -1,24 +1,44 @@
-import React, { useState } from 'react';
-import { Save, Shield, Users, Bell, Globe, Database, Key } from 'lucide-react';
-import { Card } from '../../components/ui/Card';
-import { Button } from '../../components/ui/Button';
-import { FormInput } from '../../components/ui/FormInput';
+import React, { useState } from "react";
+import { Save, Shield, Users, Bell, Globe, Database, Key } from "lucide-react";
+import { Card } from "../../components/ui/Card";
+import { Button } from "../../components/ui/Button";
+import { FormInput } from "../../components/ui/FormInput";
 
 export function Settings() {
-  const [activeTab, setActiveTab] = useState<'general' | 'users' | 'security' | 'notifications' | 'integrations'>('general');
+  const [activeTab, setActiveTab] = useState<
+    "general" | "users" | "security" | "notifications" | "integrations"
+  >("general");
 
   const tabs = [
-    { id: 'general', label: 'General', icon: Globe },
-    { id: 'users', label: 'Admins', icon: Users },
-    { id: 'security', label: 'Security', icon: Shield },
-    { id: 'notifications', label: 'Notifications', icon: Bell },
-    { id: 'integrations', label: 'Integrations', icon: Database },
+    { id: "general", label: "General", icon: Globe },
+    { id: "users", label: "Admins", icon: Users },
+    { id: "security", label: "Security", icon: Shield },
+    { id: "notifications", label: "Notifications", icon: Bell },
+    { id: "integrations", label: "Integrations", icon: Database },
   ];
 
   const adminRoles = [
-    { id: 1, name: 'John Admin', email: 'john@m3shelter.com', role: 'Super Admin', status: 'Active' },
-    { id: 2, name: 'Sarah Manager', email: 'sarah@m3shelter.com', role: 'Content Manager', status: 'Active' },
-    { id: 3, name: 'Mike Support', email: 'mike@m3shelter.com', role: 'Support Agent', status: 'Inactive' },
+    {
+      id: 1,
+      name: "John Admin",
+      email: "john@m3shelter.com",
+      role: "Super Admin",
+      status: "Active",
+    },
+    {
+      id: 2,
+      name: "Sarah Manager",
+      email: "sarah@m3shelter.com",
+      role: "Content Manager",
+      status: "Active",
+    },
+    {
+      id: 3,
+      name: "Mike Support",
+      email: "mike@m3shelter.com",
+      role: "Support Agent",
+      status: "Inactive",
+    },
   ];
 
   return (
@@ -26,7 +46,9 @@ export function Settings() {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-[#261C15]">System Settings</h1>
-          <p className="text-gray-600">Manage platform configuration and administrative settings</p>
+          <p className="text-gray-600">
+            Manage platform configuration and administrative settings
+          </p>
         </div>
       </div>
 
@@ -43,8 +65,8 @@ export function Settings() {
                     onClick={() => setActiveTab(tab.id as any)}
                     className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
                       activeTab === tab.id
-                        ? 'bg-[#053DA6] text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        ? "bg-[#053DA6] text-white"
+                        : "text-gray-600 hover:bg-gray-100"
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -58,47 +80,77 @@ export function Settings() {
 
         {/* Settings Content */}
         <div className="flex-1">
-          {activeTab === 'general' && (
+          {activeTab === "general" && (
             <div className="space-y-6">
               <Card>
-                <h3 className="text-lg font-semibold text-[#261C15] mb-4">Platform Information</h3>
+                <h3 className="text-lg font-semibold text-[#261C15] mb-4">
+                  Platform Information
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <FormInput label="Platform Name" value="M3 Shelter" />
-                  <FormInput label="Company Email" value="admin@m3shelter.com" />
+                  <FormInput label="Platform Name" value="M3 Concepts" />
+                  <FormInput
+                    label="Company Email"
+                    value="admin@m3shelter.com"
+                  />
                   <FormInput label="Support Phone" value="+234 800 123 4567" />
-                  <FormInput label="Website URL" value="https://m3shelter.com" />
+                  <FormInput
+                    label="Website URL"
+                    value="https://m3shelter.com"
+                  />
                 </div>
               </Card>
 
               <Card>
-                <h3 className="text-lg font-semibold text-[#261C15] mb-4">Platform Settings</h3>
+                <h3 className="text-lg font-semibold text-[#261C15] mb-4">
+                  Platform Settings
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium text-[#261C15]">User Registration</p>
-                      <p className="text-sm text-gray-600">Allow new users to register accounts</p>
+                      <p className="font-medium text-[#261C15]">
+                        User Registration
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Allow new users to register accounts
+                      </p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
-                      <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#053DA6]"></div>
-                    </label>
-                  </div>
-                  
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-medium text-[#261C15]">Email Verification</p>
-                      <p className="text-sm text-gray-600">Require email verification for new accounts</p>
-                    </div>
-                    <label className="relative inline-flex items-center cursor-pointer">
-                      <input type="checkbox" className="sr-only peer" defaultChecked />
+                      <input
+                        type="checkbox"
+                        className="sr-only peer"
+                        defaultChecked
+                      />
                       <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#053DA6]"></div>
                     </label>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium text-[#261C15]">Maintenance Mode</p>
-                      <p className="text-sm text-gray-600">Put the platform in maintenance mode</p>
+                      <p className="font-medium text-[#261C15]">
+                        Email Verification
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Require email verification for new accounts
+                      </p>
+                    </div>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="sr-only peer"
+                        defaultChecked
+                      />
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#053DA6]"></div>
+                    </label>
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-medium text-[#261C15]">
+                        Maintenance Mode
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Put the platform in maintenance mode
+                      </p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" />
@@ -110,45 +162,69 @@ export function Settings() {
             </div>
           )}
 
-          {activeTab === 'users' && (
+          {activeTab === "users" && (
             <div className="space-y-6">
               <Card>
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-lg font-semibold text-[#261C15]">Admin Users</h3>
+                  <h3 className="text-lg font-semibold text-[#261C15]">
+                    Admin Users
+                  </h3>
                   <Button>Add Admin User</Button>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-200">
-                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">Name</th>
-                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">Email</th>
-                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">Role</th>
-                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">Status</th>
-                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">Actions</th>
+                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">
+                          Name
+                        </th>
+                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">
+                          Email
+                        </th>
+                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">
+                          Role
+                        </th>
+                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">
+                          Status
+                        </th>
+                        <th className="text-left py-3 px-4 font-semibold text-[#261C15]">
+                          Actions
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       {adminRoles.map((admin) => (
                         <tr key={admin.id} className="border-b border-gray-100">
-                          <td className="py-3 px-4 font-medium text-[#261C15]">{admin.name}</td>
-                          <td className="py-3 px-4 text-gray-600">{admin.email}</td>
+                          <td className="py-3 px-4 font-medium text-[#261C15]">
+                            {admin.name}
+                          </td>
+                          <td className="py-3 px-4 text-gray-600">
+                            {admin.email}
+                          </td>
                           <td className="py-3 px-4">
                             <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
                               {admin.role}
                             </span>
                           </td>
                           <td className="py-3 px-4">
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              admin.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
-                            }`}>
+                            <span
+                              className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                admin.status === "Active"
+                                  ? "bg-green-100 text-green-800"
+                                  : "bg-gray-100 text-gray-800"
+                              }`}
+                            >
                               {admin.status}
                             </span>
                           </td>
                           <td className="py-3 px-4">
                             <div className="flex gap-2">
-                              <Button size="sm" variant="outline">Edit</Button>
-                              <Button size="sm" variant="danger">Remove</Button>
+                              <Button size="sm" variant="outline">
+                                Edit
+                              </Button>
+                              <Button size="sm" variant="danger">
+                                Remove
+                              </Button>
                             </div>
                           </td>
                         </tr>
@@ -159,11 +235,15 @@ export function Settings() {
               </Card>
 
               <Card>
-                <h3 className="text-lg font-semibold text-[#261C15] mb-4">Role Permissions</h3>
+                <h3 className="text-lg font-semibold text-[#261C15] mb-4">
+                  Role Permissions
+                </h3>
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-medium text-[#261C15] mb-2">Super Admin</h4>
+                      <h4 className="font-medium text-[#261C15] mb-2">
+                        Super Admin
+                      </h4>
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Full system access</li>
                         <li>• Admins</li>
@@ -172,7 +252,9 @@ export function Settings() {
                       </ul>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-medium text-[#261C15] mb-2">Content Manager</h4>
+                      <h4 className="font-medium text-[#261C15] mb-2">
+                        Content Manager
+                      </h4>
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Content management</li>
                         <li>• Blog post creation</li>
@@ -181,7 +263,9 @@ export function Settings() {
                       </ul>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-medium text-[#261C15] mb-2">Support Agent</h4>
+                      <h4 className="font-medium text-[#261C15] mb-2">
+                        Support Agent
+                      </h4>
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• User support</li>
                         <li>• Transaction queries</li>
@@ -195,26 +279,40 @@ export function Settings() {
             </div>
           )}
 
-          {activeTab === 'security' && (
+          {activeTab === "security" && (
             <div className="space-y-6">
               <Card>
-                <h3 className="text-lg font-semibold text-[#261C15] mb-4">Security Settings</h3>
+                <h3 className="text-lg font-semibold text-[#261C15] mb-4">
+                  Security Settings
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium text-[#261C15]">Two-Factor Authentication</p>
-                      <p className="text-sm text-gray-600">Require 2FA for all admin accounts</p>
+                      <p className="font-medium text-[#261C15]">
+                        Two-Factor Authentication
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Require 2FA for all admin accounts
+                      </p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
-                      <input type="checkbox" className="sr-only peer" defaultChecked />
+                      <input
+                        type="checkbox"
+                        className="sr-only peer"
+                        defaultChecked
+                      />
                       <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#053DA6]"></div>
                     </label>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium text-[#261C15]">Session Timeout</p>
-                      <p className="text-sm text-gray-600">Auto-logout inactive admin sessions</p>
+                      <p className="font-medium text-[#261C15]">
+                        Session Timeout
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Auto-logout inactive admin sessions
+                      </p>
                     </div>
                     <select className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#053DA6] focus:border-transparent">
                       <option>30 minutes</option>
@@ -227,11 +325,17 @@ export function Settings() {
               </Card>
 
               <Card>
-                <h3 className="text-lg font-semibold text-[#261C15] mb-4">API Security</h3>
+                <h3 className="text-lg font-semibold text-[#261C15] mb-4">
+                  API Security
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
                     <Key className="w-4 h-4 text-gray-400" />
-                    <FormInput label="API Key" value="sk_live_xxxxxxxxxxxxxxxxxxxx" type="password" />
+                    <FormInput
+                      label="API Key"
+                      value="sk_live_xxxxxxxxxxxxxxxxxxxx"
+                      type="password"
+                    />
                   </div>
                   <Button variant="outline">Regenerate API Key</Button>
                 </div>
@@ -239,40 +343,66 @@ export function Settings() {
             </div>
           )}
 
-          {activeTab === 'notifications' && (
+          {activeTab === "notifications" && (
             <div className="space-y-6">
               <Card>
-                <h3 className="text-lg font-semibold text-[#261C15] mb-4">Email Notifications</h3>
+                <h3 className="text-lg font-semibold text-[#261C15] mb-4">
+                  Email Notifications
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium text-[#261C15]">New User Registration</p>
-                      <p className="text-sm text-gray-600">Notify admins when new users register</p>
+                      <p className="font-medium text-[#261C15]">
+                        New User Registration
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Notify admins when new users register
+                      </p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
-                      <input type="checkbox" className="sr-only peer" defaultChecked />
+                      <input
+                        type="checkbox"
+                        className="sr-only peer"
+                        defaultChecked
+                      />
                       <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#053DA6]"></div>
                     </label>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium text-[#261C15]">Large Investments</p>
-                      <p className="text-sm text-gray-600">Notify for investments over ₦5M</p>
+                      <p className="font-medium text-[#261C15]">
+                        Large Investments
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Notify for investments over ₦5M
+                      </p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
-                      <input type="checkbox" className="sr-only peer" defaultChecked />
+                      <input
+                        type="checkbox"
+                        className="sr-only peer"
+                        defaultChecked
+                      />
                       <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#053DA6]"></div>
                     </label>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium text-[#261C15]">System Alerts</p>
-                      <p className="text-sm text-gray-600">Critical system notifications</p>
+                      <p className="font-medium text-[#261C15]">
+                        System Alerts
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Critical system notifications
+                      </p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
-                      <input type="checkbox" className="sr-only peer" defaultChecked />
+                      <input
+                        type="checkbox"
+                        className="sr-only peer"
+                        defaultChecked
+                      />
                       <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#053DA6]"></div>
                     </label>
                   </div>
@@ -281,10 +411,12 @@ export function Settings() {
             </div>
           )}
 
-          {activeTab === 'integrations' && (
+          {activeTab === "integrations" && (
             <div className="space-y-6">
               <Card>
-                <h3 className="text-lg font-semibold text-[#261C15] mb-4">Payment Integrations</h3>
+                <h3 className="text-lg font-semibold text-[#261C15] mb-4">
+                  Payment Integrations
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
                     <div className="flex items-center gap-3">
@@ -293,12 +425,18 @@ export function Settings() {
                       </div>
                       <div>
                         <p className="font-medium text-[#261C15]">Paystack</p>
-                        <p className="text-sm text-gray-600">Nigerian payment processing</p>
+                        <p className="text-sm text-gray-600">
+                          Nigerian payment processing
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Connected</span>
-                      <Button size="sm" variant="outline">Configure</Button>
+                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">
+                        Connected
+                      </span>
+                      <Button size="sm" variant="outline">
+                        Configure
+                      </Button>
                     </div>
                   </div>
 
@@ -308,12 +446,18 @@ export function Settings() {
                         <div className="w-4 h-4 bg-blue-600 rounded"></div>
                       </div>
                       <div>
-                        <p className="font-medium text-[#261C15]">Flutterwave</p>
-                        <p className="text-sm text-gray-600">Multi-currency payments</p>
+                        <p className="font-medium text-[#261C15]">
+                          Flutterwave
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          Multi-currency payments
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Disconnected</span>
+                      <span className="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">
+                        Disconnected
+                      </span>
                       <Button size="sm">Connect</Button>
                     </div>
                   </div>
@@ -321,7 +465,9 @@ export function Settings() {
               </Card>
 
               <Card>
-                <h3 className="text-lg font-semibold text-[#261C15] mb-4">Communication Services</h3>
+                <h3 className="text-lg font-semibold text-[#261C15] mb-4">
+                  Communication Services
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
                     <div className="flex items-center gap-3">
@@ -330,12 +476,18 @@ export function Settings() {
                       </div>
                       <div>
                         <p className="font-medium text-[#261C15]">SendGrid</p>
-                        <p className="text-sm text-gray-600">Email delivery service</p>
+                        <p className="text-sm text-gray-600">
+                          Email delivery service
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Active</span>
-                      <Button size="sm" variant="outline">Settings</Button>
+                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">
+                        Active
+                      </span>
+                      <Button size="sm" variant="outline">
+                        Settings
+                      </Button>
                     </div>
                   </div>
                 </div>

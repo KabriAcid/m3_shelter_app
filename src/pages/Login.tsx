@@ -80,7 +80,7 @@ export const Login: React.FC = () => {
             Welcome back
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Sign in to your M3 Shelter account
+            Sign in to your M3 Concepts account
           </p>
         </div>
 
