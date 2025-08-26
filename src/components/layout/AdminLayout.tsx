@@ -2,7 +2,26 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { AdminSidebar } from "./AdminSidebar";
 import Topbar from "./Topbar";
-import BottomNav from "../ui/BottomNav";
+import BottomNav, { NavItem } from "../ui/BottomNav";
+import {
+  Home,
+  Users,
+  Building,
+  FileText,
+  CreditCard,
+  BarChart3,
+  Settings,
+} from "lucide-react";
+
+const adminNavItems: NavItem[] = [
+  { label: "Dashboard", icon: Home, to: "/admin" },
+  { label: "Users", icon: Users, to: "/admin/users" },
+  { label: "Investments", icon: Building, to: "/admin/investments" },
+  { label: "Content", icon: FileText, to: "/admin/content" },
+  { label: "Transactions", icon: CreditCard, to: "/admin/transactions" },
+  { label: "Reports", icon: BarChart3, to: "/admin/reports" },
+  { label: "Settings", icon: Settings, to: "/admin/settings" },
+];
 
 const AdminLayout: React.FC = () => {
   return (
@@ -20,7 +39,7 @@ const AdminLayout: React.FC = () => {
       </div>
       {/* Bottom navigation: only on small screens */}
       <div className="block md:hidden fixed bottom-0 left-0 right-0 z-50">
-        <BottomNav />
+        <BottomNav navItems={adminNavItems} />
       </div>
     </div>
   );

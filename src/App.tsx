@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-import BottomNav from "./components/ui/BottomNav";
+import UserLayout from "./components/layout/UserLayout";
 
 // Public pages
 import Homepage from "./pages/Homepage";
@@ -38,7 +38,6 @@ import { Transactions } from "./pages/Admin/Transactions";
 import { Reports } from "./pages/Admin/Reports";
 import { Settings as AdminSettings } from "./pages/Admin/Settings";
 
-// Removed old AdminLayout function, now using imported AdminLayout component
 
 function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
@@ -49,7 +48,6 @@ function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-white relative">
       {showNavFooter && <Navigation />}
       <main>{children}</main>
-      {isDashboard && <BottomNav />}
       {showNavFooter && <Footer />}
     </div>
   );
@@ -69,12 +67,14 @@ function AppRoutes() {
       {/* User routes */}
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<Overview />} />
-      <Route path="/dashboard/overview" element={<Overview />} />
-      <Route path="/dashboard/marketplace" element={<Marketplace />} />
-      <Route path="/dashboard/legal-vault" element={<LegalVault />} />
-      <Route path="/dashboard/notifications" element={<Notifications />} />
-      <Route path="/dashboard/settings" element={<UserSettings />} />
+      <Route path="/dashboard" element={<UserLayout />}>
+        <Route index element={<Overview />} />
+        <Route path="overview" element={<Overview />} />
+        <Route path="marketplace" element={<Marketplace />} />
+        <Route path="legal-vault" element={<LegalVault />} />
+        <Route path="notifications" element={<Notifications />} />
+        <Route path="settings" element={<UserSettings />} />
+      </Route>
       {/* Admin routes */}
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin" element={<AdminLayout />}>

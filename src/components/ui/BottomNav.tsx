@@ -2,15 +2,17 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, ShoppingCart, FileText, Bell, Settings } from "lucide-react";
 
-const navItems = [
-  { label: "Overview", icon: Home, to: "/dashboard/overview" },
-  { label: "Marketplace", icon: ShoppingCart, to: "/dashboard/marketplace" },
-  { label: "LegalVault", icon: FileText, to: "/dashboard/legal-vault" },
-  { label: "Notifications", icon: Bell, to: "/dashboard/notifications" },
-  { label: "Settings", icon: Settings, to: "/dashboard/settings" },
-];
+export type NavItem = {
+  label: string;
+  icon: React.ElementType;
+  to: string;
+};
 
-const BottomNav: React.FC = () => {
+interface BottomNavProps {
+  navItems: NavItem[];
+}
+
+const BottomNav: React.FC<BottomNavProps> = ({ navItems }) => {
   const location = useLocation();
   return (
     <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white shadow-2xl rounded-2xl px-4 py-2 flex justify-between items-center w-[95vw] max-w-xl border border-gray-100">
