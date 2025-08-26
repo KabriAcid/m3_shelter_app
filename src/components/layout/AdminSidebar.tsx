@@ -101,7 +101,7 @@ export function AdminSidebar() {
                 className="px-6 py-2 rounded-lg bg-[#053DA6] text-white font-semibold hover:bg-[#042f85] transition-colors shadow"
                 onClick={() => {
                   setShowLogoutModal(false);
-                  window.location.href = "/login";
+                  window.location.href = "/admin/login";
                 }}
               >
                 Sign Out
