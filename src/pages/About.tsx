@@ -18,6 +18,7 @@ import {
   TrendingUp,
   Building2,
   CheckCircle,
+  Instagram,
 } from "lucide-react";
 
 const About = () => {
@@ -29,6 +30,7 @@ const About = () => {
       image: ceoImg,
       linkedin: "#",
       twitter: "#",
+      instagram: "#",
     },
     {
       name: "Ahmad Jikamshi",
@@ -37,6 +39,7 @@ const About = () => {
       image: deputyManagerImg,
       linkedin: "#",
       twitter: "#",
+      instagram: "#",
     },
     {
       name: "Aliyu Umar",
@@ -45,6 +48,7 @@ const About = () => {
       image: financeDirectorImg,
       linkedin: "#",
       twitter: "#",
+      instagram: "#",
     },
     {
       name: "Muhammad Nasir Salihu",
@@ -53,6 +57,7 @@ const About = () => {
       image: marketingDirectorImg,
       linkedin: "#",
       twitter: "#",
+      instagram: "#",
     },
   ];
 
@@ -417,6 +422,12 @@ const About = () => {
                   >
                     <Twitter className="w-4 h-4 text-gray-600" />
                   </a>
+                  <a
+                    href={member.instagram}
+                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary-100 transition-colors duration-200"
+                  >
+                    <Instagram className="w-4 h-4 text-gray-600" />
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -455,7 +466,7 @@ const About = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-primary-200">+234 800 M3 SHELTER</div>
+                    <div className="text-primary-200">+234 703794 3396</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -464,7 +475,7 @@ const About = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Office</div>
-                    <div className="text-primary-200">Lagos, Nigeria</div>
+                    <div className="text-primary-200">Abuja, Nigeria</div>
                   </div>
                 </div>
               </div>
