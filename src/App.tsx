@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navigation } from "./components/NavigationUser";
+import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 
 // Public pages
-import { Homepage } from "./pages/Homepage";
-import { HowItWorks } from "./pages/HowItWorks";
-import { Features } from "./pages/Features";
-import { Investments } from "./pages/Investments";
-import { About } from "./pages/About";
-import { Download } from "./pages/Download";
-import { Blog } from "./pages/Blog";
+import Homepage from "./pages/Homepage";
+import HowItWorks from "./pages/HowItWorks";
+import Features from "./pages/Features";
+import Investments from "./pages/Investments";
+import About from "./pages/About";
+import Download from "./pages/Download";
+import Blog from "./pages/Blog";
 
 // User pages
 import { Register } from "./pages/Register";
@@ -33,9 +33,10 @@ import { Settings as AdminSettings } from "./pages/Admin/Settings";
 
 function AdminLayout() {
   // Use nested routing for admin dashboard
+  const [activeTab, setActiveTab] = React.useState("dashboard");
   return (
     <div className="flex min-h-screen bg-[#F7F7F2]">
-      <AdminSidebar />
+      <AdminSidebar activeTab={activeTab} onTabChange={setActiveTab} />
       <main className="flex-1 p-6 overflow-auto">
         <Routes>
           <Route path="/" element={<AdminDashboard />} />

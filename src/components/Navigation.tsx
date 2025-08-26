@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Download, Building } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Download, Building } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,17 +12,18 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Features', href: '/features' },
-    { name: 'Investments', href: '/investments' },
-    { name: 'About', href: '/about' },
-    { name: 'Blog', href: '/blog' },
+  { name: "Home", href: "/" },
+  { name: "How It Works", href: "/how-it-works" },
+  { name: "Features", href: "/features" },
+  { name: "Investments", href: "/investments" },
+  { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
+  { name: "Login", href: "/login", isButton: true },
   ];
 
   return (
@@ -30,9 +31,9 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-100' 
-          : 'bg-transparent'
+        isScrolled
+          ? "bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-100"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,32 +48,35 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.href
-                    ? 'text-primary-600'
-                    : 'text-gray-700 hover:text-primary-600'
-                }`}
-              >
-                {item.name}
-                {location.pathname === item.href && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600"
-                  />
-                )}
-              </Link>
-            ))}
-            <Link
-              to="/download"
-              className="bg-primary-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200 flex items-center space-x-2"
-            >
-              <Download className="w-4 h-4" />
-              <span>Download App</span>
-            </Link>
+            {navigation.map((item) =>
+              item.isButton ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                    location.pathname === item.href
+                      ? "text-primary-600"
+                      : "text-gray-700 hover:text-primary-600"
+                  }`}
+                >
+                  {item.name}
+                  {location.pathname === item.href && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600"
+                    />
+                  )}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -90,32 +94,36 @@ const Navigation = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t border-gray-100 shadow-lg"
           >
             <div className="px-4 py-2 space-y-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
-                    location.pathname === item.href
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link
-                to="/download"
-                onClick={() => setIsOpen(false)}
-                className="block w-full mt-4 bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200 text-center"
-              >
-                Download App
-              </Link>
+              {navigation.map((item) =>
+                item.isButton ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-3 py-2 bg-primary-600 text-white rounded-lg mx-3 text-center font-medium hover:bg-primary-700 transition-colors duration-200"
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
+                      location.pathname === item.href
+                        ? "text-primary-600 bg-primary-50"
+                        : "text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </div>
           </motion.div>
         )}
