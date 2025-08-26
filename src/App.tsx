@@ -1,14 +1,55 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import Homepage from './pages/Homepage';
-import HowItWorks from './pages/HowItWorks';
-import Features from './pages/Features';
-import Investments from './pages/Investments';
-import About from './pages/About';
-import Download from './pages/Download';
-import Blog from './pages/Blog';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navigation } from "./components/NavigationUser";
+import Footer from "./components/Footer";
+
+// Public pages
+import { Homepage } from "./pages/Homepage";
+import { HowItWorks } from "./pages/HowItWorks";
+import { Features } from "./pages/Features";
+import { Investments } from "./pages/Investments";
+import { About } from "./pages/About";
+import { Download } from "./pages/Download";
+import { Blog } from "./pages/Blog";
+
+// User pages
+import { Register } from "./pages/Register";
+import { Login } from "./pages/Login";
+import { Overview } from "./pages/Dashboard/Overview";
+import { Marketplace } from "./pages/Dashboard/Marketplace";
+import { LegalVault } from "./pages/Dashboard/LegalVault";
+import { Notifications } from "./pages/Dashboard/Notifications";
+import { Settings as UserSettings } from "./pages/Dashboard/Settings";
+
+// Admin pages
+import { AdminSidebar } from "./components/layout/AdminSidebar";
+import { AdminDashboard } from "./pages/Admin/AdminDashboard";
+import { Users } from "./pages/Admin/Users";
+import { Investments as AdminInvestments } from "./pages/Admin/Investments";
+import { Content } from "./pages/Admin/Content";
+import { Transactions } from "./pages/Admin/Transactions";
+import { Reports } from "./pages/Admin/Reports";
+import { Settings as AdminSettings } from "./pages/Admin/Settings";
+
+function AdminLayout() {
+  // Use nested routing for admin dashboard
+  return (
+    <div className="flex min-h-screen bg-[#F7F7F2]">
+      <AdminSidebar />
+      <main className="flex-1 p-6 overflow-auto">
+        <Routes>
+          <Route path="/" element={<AdminDashboard />} />
+          <Route path="users" element={<Users />} />
+          <Route path="investments" element={<AdminInvestments />} />
+          <Route path="content" element={<Content />} />
+          <Route path="transactions" element={<Transactions />} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="settings" element={<AdminSettings />} />
+        </Routes>
+      </main>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -17,6 +58,7 @@ function App() {
         <Navigation />
         <main>
           <Routes>
+            {/* Public routes */}
             <Route path="/" element={<Homepage />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/features" element={<Features />} />
@@ -24,6 +66,22 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/download" element={<Download />} />
             <Route path="/blog" element={<Blog />} />
+
+            {/* User routes */}
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Overview />} />
+            <Route path="/dashboard/overview" element={<Overview />} />
+            <Route path="/dashboard/marketplace" element={<Marketplace />} />
+            <Route path="/dashboard/legal-vault" element={<LegalVault />} />
+            <Route
+              path="/dashboard/notifications"
+              element={<Notifications />}
+            />
+            <Route path="/dashboard/settings" element={<UserSettings />} />
+
+            {/* Admin routes */}
+            <Route path="/admin/*" element={<AdminLayout />} />
           </Routes>
         </main>
         <Footer />
