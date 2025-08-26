@@ -28,8 +28,7 @@ import { Notifications } from "./pages/Dashboard/Notifications";
 import { Settings as UserSettings } from "./pages/Dashboard/Settings";
 
 // Admin pages
-import { AdminSidebar } from "./components/layout/AdminSidebar";
-import Topbar from "./components/layout/Topbar";
+import AdminLayout from "./components/layout/AdminLayout";
 import { Login as AdminLogin } from "./pages/Admin/AdminLogin";
 import { AdminDashboard } from "./pages/Admin/AdminDashboard";
 import { Users } from "./pages/Admin/Users";
@@ -39,28 +38,7 @@ import { Transactions } from "./pages/Admin/Transactions";
 import { Reports } from "./pages/Admin/Reports";
 import { Settings as AdminSettings } from "./pages/Admin/Settings";
 
-function AdminLayout() {
-  return (
-    <div className="flex flex-col min-h-screen bg-[#F7F7F2]">
-      {/* Premium Topbar */}
-      <Topbar />
-      <div className="flex flex-1">
-        <AdminSidebar />
-        <main className="flex-1 p-6 overflow-auto">
-          <Routes>
-            <Route path="/" element={<AdminDashboard />} />
-            <Route path="users" element={<Users />} />
-            <Route path="investments" element={<AdminInvestments />} />
-            <Route path="content" element={<Content />} />
-            <Route path="transactions" element={<Transactions />} />
-            <Route path="reports" element={<Reports />} />
-            <Route path="settings" element={<AdminSettings />} />
-          </Routes>
-        </main>
-      </div>
-    </div>
-  );
-}
+// Removed old AdminLayout function, now using imported AdminLayout component
 
 function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
@@ -98,10 +76,16 @@ function AppRoutes() {
       <Route path="/dashboard/notifications" element={<Notifications />} />
       <Route path="/dashboard/settings" element={<UserSettings />} />
       {/* Admin routes */}
-      <Route path="/admin/login" element={<AdminLogin />} />{" "}
-      {/* Standalone admin login */}
-      <Route path="/admin/*" element={<AdminLayout />} />{" "}
-      {/* All other admin pages */}
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<AdminDashboard />} />
+        <Route path="users" element={<Users />} />
+        <Route path="investments" element={<AdminInvestments />} />
+        <Route path="content" element={<Content />} />
+        <Route path="transactions" element={<Transactions />} />
+        <Route path="reports" element={<Reports />} />
+        <Route path="settings" element={<AdminSettings />} />
+      </Route>
     </Routes>
   );
 }
